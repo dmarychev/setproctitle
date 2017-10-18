@@ -7,3 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(src/include)
 
 add_library(setproctitle STATIC src/setproctitle.cpp)
+
+find_package(CxxTest)
+if (CxxTest_FOUND)
+    enable_testing()
+    add_subdirectory(src/unit)
+else()
+    message(WARNING "CxxTest was not found, unit tests will be disabled")
+endif()
