@@ -78,5 +78,5 @@ void setproctitle(const char* title, int argc, char** argv)
     }
 
     std::strncpy(argv[0], title, to_be_copied);
-    argv[0][to_be_copied] = 0;
+    std::memset(argv[0] + to_be_copied, 0, argv_size - to_be_copied);
 }
