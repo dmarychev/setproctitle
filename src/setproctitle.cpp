@@ -1,4 +1,4 @@
-#include "setproctitle.h"
+#include "setproctitle/setproctitle.h"
 #include <cstring>
 #include <cstdlib>
 

@@ -7,6 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(src/include)
 
 add_library(setproctitle STATIC src/setproctitle.cpp)
+install(TARGETS setproctitle
+        ARCHIVE DESTINATION lib)
+install(DIRECTORY src/include/setproctitle
+        DESTINATION include/
+        FILES_MATCHING PATTERN "*.h")
 
 find_package(CxxTest)
 if (CxxTest_FOUND)
